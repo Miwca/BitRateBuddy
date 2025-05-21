@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35312.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BitRateBuddy.Service", "Src\BitRateBuddy.Service\BitRateBuddy.Service.csproj", "{F08818BF-A470-4574-983E-620414472D1A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nginx-rtmp-server", "nginx-rtmp-server", "{C1355B86-C8EB-48D1-BAFB-23CFD7DCD2DC}"
+	ProjectSection(SolutionItems) = preProject
+		nginx-rtmp-server\Dockerfile = nginx-rtmp-server\Dockerfile
+		nginx-rtmp-server\nginx.conf = nginx-rtmp-server\nginx.conf
+		nginx-rtmp-server\stat.xsl = nginx-rtmp-server\stat.xsl
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitRateBuddy.StreamerBot", "Src\BitRateBuddy.StreamerBot\BitRateBuddy.StreamerBot.csproj", "{3C4113E4-DF81-4CFF-B570-8F4E49955412}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitRateBuddy.NginxStats", "Src\BitRateBuddy.NginxStats\BitRateBuddy.NginxStats.csproj", "{80A7C675-9C0D-4D7D-8B21-8730E7C0BDEA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F08818BF-A470-4574-983E-620414472D1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F08818BF-A470-4574-983E-620414472D1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F08818BF-A470-4574-983E-620414472D1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F08818BF-A470-4574-983E-620414472D1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C4113E4-DF81-4CFF-B570-8F4E49955412}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C4113E4-DF81-4CFF-B570-8F4E49955412}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C4113E4-DF81-4CFF-B570-8F4E49955412}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C4113E4-DF81-4CFF-B570-8F4E49955412}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80A7C675-9C0D-4D7D-8B21-8730E7C0BDEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80A7C675-9C0D-4D7D-8B21-8730E7C0BDEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80A7C675-9C0D-4D7D-8B21-8730E7C0BDEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80A7C675-9C0D-4D7D-8B21-8730E7C0BDEA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DAE0C70E-7623-40D8-A90D-CED2B630B11B}
+	EndGlobalSection
+EndGlobal
