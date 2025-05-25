@@ -16,7 +16,7 @@ public class PersistentWebSocketHostedService(
     WebsocketClient websocketClient)
     : BackgroundService
 {
-    private readonly Uri _serverUri = new(options.Value.WebsocketUrl);
+    private readonly Uri _serverUri = new(options.Value.Websocket.BaseUrl);
     
     private readonly TimeSpan _reconnectDelay = TimeSpan.FromSeconds(5);
 
@@ -69,6 +69,7 @@ public class PersistentWebSocketHostedService(
     {
         while (!token.IsCancellationRequested && ws.State == WebSocketState.Open)
         {
+            await websocketClient.SendQueue.Reader.WaitToReadAsync(token);
             while (websocketClient.SendQueue.Reader.TryRead(out var msg))
             {
                 var buffer = Encoding.UTF8.GetBytes(msg);
@@ -107,8 +108,11 @@ public class PersistentWebSocketHostedService(
             logger.LogInformation("AUTHENTICATION SENT");
 
             // wait for proper auth or websocket server in Streamer.Bot crashes.
-            await Task.Delay(5000, token); 
-            websocketClient.WebsocketIsReady = true;
+            //await Task.Delay(5000, token);
+            if (_webSocket!.State == WebSocketState.Open)
+            {
+                websocketClient.WebsocketIsReady = true;
+            }
         }
     }
 
@@ -134,7 +138,7 @@ public class PersistentWebSocketHostedService(
 
     private async Task AuthenticateConnection(AuthenticationParentMessage authMessage)
     {
-        var password = options.Value.Password;
+        var password = options.Value.Websocket.Password;
 
         var auth = authMessage.Authentication;
         var salt = password + auth.Salt;

@@ -2,9 +2,21 @@
 {
     public class StreamerBotSettings
     {
-        public string WebsocketUrl { get; set; } = string.Empty;
-        public string Password { get; set; } = string.Empty;
+        public StreamerBotWebsocketSettings Websocket { get; set; } = new();
+        public StreamerBotUrlSettings Http { get; set; } = new();
         public StreamerBotActionsSettings Actions { get; set; } = new();
+    }
+
+    public class StreamerBotWebsocketSettings
+    {
+        public string BaseUrl { get; set; } = string.Empty;
+        public string Password { get; set; } = string.Empty;
+    }
+
+    public class StreamerBotUrlSettings
+    {
+        public string BaseUrl { get; set; } = string.Empty;
+        public string Password { get; set; } = string.Empty;
     }
 
     public class StreamerBotActionsSettings

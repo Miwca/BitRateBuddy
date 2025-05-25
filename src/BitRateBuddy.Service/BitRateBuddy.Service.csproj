@@ -16,8 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\BitRateBuddy.NginxStats\BitRateBuddy.NginxStats.csproj" />
-    <ProjectReference Include="..\..\BitRateBuddy.StreamerBot\BitRateBuddy.StreamerBot.csproj" />
+    <ProjectReference Include="..\BitRateBuddy.ApiCaller\BitRateBuddy.ApiCaller.csproj" />
     <ProjectReference Include="..\BitRateBuddy.NginxStats\BitRateBuddy.NginxStats.csproj" />
     <ProjectReference Include="..\BitRateBuddy.StreamerBot\BitRateBuddy.StreamerBot.csproj" />
   </ItemGroup>
